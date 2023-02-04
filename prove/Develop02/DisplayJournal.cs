@@ -2,11 +2,11 @@ using System;
 using System.IO;
 
 public class DisplayJournal{
-    public List<NewEntry> _journal = new List<NewEntry>();
+    public List<NewEntry> _entries = new List<NewEntry>();
 
     public void Display()
     {
-        foreach (NewEntry entry in _journal)
+        foreach (NewEntry entry in _entries)
         {
             entry.Display();
         }
@@ -16,7 +16,7 @@ public class DisplayJournal{
     {
         using (StreamWriter outputFile = new StreamWriter(filename))
         {
-            outputFile.WriteLine(_journal);
+            outputFile.WriteLine(_entries);
         }
     }
 

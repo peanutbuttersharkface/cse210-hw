@@ -27,7 +27,9 @@ class Program
       string response = Console.ReadLine();
       entry1._entry = response;
 
-      entry1._date = "Jan 2023";
+      DateTime theCurrentTime = DateTime.Now;
+      string dateText = theCurrentTime.ToShortDateString();
+      entry1._date = dateText;
 
       journal._journal.Add(entry1);
 
