@@ -1,20 +1,18 @@
-using System;  
+using System;
 
-public class PromptGenerator 
-{  
+public class PromptGenerator {
+    public List<string> _prompts = new List<string>()
+     {"Who was the most interesting person I interacted with today?", 
+    "What was the best part of my day?",
+    "How did I see the hand of the Lord in my life today?", 
+    "What was the strongest emotion I felt today?",
+    "If I had one thing I could do over today, what would it be?"};
     
-   public List<Prompt> _prompt = new List<Prompt>();
-
-   public void DisplayPromptGenerator(){
-    Console.WriteLine($"Random Prompt:{_prompt}");
-    foreach (Prompt prompt in _prompt){
-        prompt.DisplayPrompt();
+    public string Display(){
+        Random rand = new Random();
+        string _prompt = _prompts[rand.Next(0, _prompts.Count)];
+        Console.WriteLine(_prompt);
+        return _prompt;
+        // generate a random prompt
     }
-   }
- 
-
-
-
- 
- 
-} 
+}

@@ -1,18 +1,11 @@
-using System; 
 
+using System;
 public class Save{
+public List<NewEntry> _entries = new List<NewEntry>();
 
-
-    public List<NewEntry> _NewEntry = new List<NewEntry>();
-
-    public void ShowDateAndEntry()
-    {
-        Console.WriteLine($"NewEntry");
-        foreach( NewEntry newEntry in _NewEntry)
-        {
-            newEntry.ShowDateAndEntry();
-        }
-
+public void DisplaySaveList(){
+    foreach (NewEntry entry in _entries){
+        entry.DisplayEntries();
     }
-
+}
 }

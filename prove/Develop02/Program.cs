@@ -3,43 +3,57 @@ using System;
 class Program
 {
     static void Main(string[] args)
-    {
-        Prompt prompt1 = new Prompt();
-        prompt1._prompt =  "Who was the most interesting person I interacted with today?";
+    {//menu
+      Console.WriteLine("Welcome to the Journal Program.");
+      Console.WriteLine("Please select one of the following options:");
+      Console.WriteLine("1. Write");
+      Console.WriteLine("2. Display");
+      Console.WriteLine("3. Load");
+      Console.WriteLine("4.Save");
+      Console.WriteLine("5.Quit");
+      Console.Write("What would you like to do?");
+      string pick = Console.ReadLine();
 
-        Prompt prompt2 = new Prompt();
-        prompt2._prompt = "What was the best part of my day?";
+      // if statement
 
-        Prompt prompt3 = new Prompt();
-        prompt3._prompt =  "How did I see the hand of the Lord in my life today?";
+      if(pick == "1")
+      {
+      NewEntry entry1 = new NewEntry();
+      PromptGenerator prompt = new PromptGenerator();
 
-        Prompt prompt4 = new Prompt();
-        prompt4._prompt = "What was the strongest emotion I felt today?";
+      // gives the prompt
+      entry1._prompt = prompt.Display();
 
-        Prompt prompt5 = new Prompt();
-        prompt5._prompt = "If I had one thing I could do over today, what would it be?";
+      string response = Console.ReadLine();
+      entry1._entry = response;
 
-        PromptGenerator myGenerator = new PromptGenerator();
-        myGenerator._prompt.Add(prompt1);
-        myGenerator._prompt.Add(prompt2);
-        myGenerator._prompt.Add(prompt3);
-        myGenerator._prompt.Add(prompt4);
-        myGenerator._prompt.Add(prompt5);
+      entry1._date = "Jan 2023";
 
-        myGenerator.DisplayPromptGenerator();
+      journal._journal.Add(entry1);
 
-        NewEntry newEntry1 = new NewEntry();
-        Console.WriteLine("Enter Date:");
-        string _date = Console.ReadLine();
-        Console.WriteLine("Entry:");
-        string _entry = Console.ReadLine();
+      }
+      
+      else if (pick =="2")
+      {
+        journal.Display();
+      }
 
-        DisplayJournal myJournal = new DisplayJournal();
-        
-        myJournal._entry.Add(newEntry1);
-        myJournal.Main();
-
-       
+      else if (pick =="3")
+      {
+        Console.WriteLine("What is the filename you would like to store your entries in?");
+        string filename = Console.ReadLine();
+        journal.Load(filename);
     }
-    
+      else if (pick =="4")
+      {
+        Console.WriteLine = ("What file would you like to save to?");
+        string filename = Console.ReadLine();
+        journal.Save(filename);
+      }
+
+      else if (pick =="5")
+      {
+        Console.WriteLine("Good Bye!");
+      }
+}
 }

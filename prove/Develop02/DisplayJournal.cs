@@ -1,28 +1,28 @@
 using System;
 using System.IO;
-public class DisplayJournal
-{
-    public static void Main(){
-        string path = @"Journal.txt";
-        if (!File.Exists(path)){
-            string[] createText = {"My Journal"};
-            File.WriteAllLines(path, createText);
-        }
-        string appendText = "This is extra text" + Environment.NewLine;
-        File.AppendAllText(path, appendText);
 
-        string[] readText = File.ReadAllLines(path);
-        foreach (string s in readText){
-            Console.WriteLine(s);
-        }
-     /* public List<NewEntry> _entrys = new List<NewEntry>();
+public class DisplayJournal{
+    public List<NewEntry> _journal = new List<NewEntry>();
 
-      public void DisplayEntries(){
-
-        foreach (NewEntry entry in _entrys){
-            entry.ShowDateAndEntry();
+    public void Display()
+    {
+        foreach (NewEntry entry in _journal)
+        {
+            entry.Display();
         }
-    }*/
-    
-}
+    }
+
+    public void Save(string filename)  
+    {
+        using (StreamWriter outputFile = new StreamWriter(filename))
+        {
+            outputFile.WriteLine(_journal);
+        }
+    }
+
+    public void Load(string filename)
+    {
+        
+        string[] journal = System.IO.File.ReadAllLines(filename);
+    }
 }
