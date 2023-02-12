@@ -31,13 +31,15 @@ class Program
       string dateText = theCurrentTime.ToShortDateString();
       entry1._date = dateText;
 
-      journal._journal.Add(entry1);
+      
+      journal._entries.Add(entry1);
 
       }
       
       else if (pick =="2")
       {
-        journal.Display();
+        
+        DisplayJournal.Display();
       }
 
       else if (pick =="3")
