@@ -12,7 +12,7 @@ public class Fraction{
         _top = wholeNumber;
         _bottom = 1;
     } 
-
+    
     public Fraction(int top, int bottom)
     {
         _top = top;
