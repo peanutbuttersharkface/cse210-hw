@@ -20,13 +20,14 @@ class Program
         Console.WriteLine("4. Load Goals");
         Console.WriteLine("5. Record Event");
         Console.WriteLine("6. Quit");
+        Console.WriteLine("7. other");
         Console.Write("What is your selction?");
         userChoice = Convert.ToInt32(Console.ReadLine());
 
         if (userChoice == 1){
             Console.Clear();
             //make a list to put goals in
-            List<Goal> _current = new List<Goal>();
+            //List<Goal> _current = new List<Goal>();
             int choice = 0;
             do{
                 Console.WriteLine("The types of Goals are:");
@@ -43,7 +44,7 @@ class Program
                 Simple goal1 = new Simple();
                 goal1.GoalInfo();
                 Console.Read();
-                _current.Add(goal1);
+               //_current.Add(goal1);
                 return;
            
 
