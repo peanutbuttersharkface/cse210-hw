@@ -11,7 +11,7 @@ class Program
         do{
         Console.Clear();
         Console.WriteLine("Main Menu");
-        Console.WriteLine("1.Breathing Activity");
+        Console.WriteLine("1.Breathing Activity Fun");
         Console.WriteLine("2.Reflection Activity");
         Console.WriteLine("3.Listing Activity");
         Console.WriteLine("4.Quit");
@@ -25,6 +25,7 @@ class Program
             Console.Clear();
             Breathing breath = new Breathing("Breathing Activity","This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.", 0);
             Console.Clear(); 
+            breath.DisplayStartMessage();
             breath.Prepare();
             breath.DisplaySpinner();
             Console.Clear();

@@ -34,13 +34,13 @@ public abstract class Goal{
     //public abstract int GetPoints();
     public void GoalInfo(){
            Console.WriteLine("What is the name of your goal?");
-            Console.Read();
+            Console.ReadLine();
 
             Console.WriteLine("What is a short description of it?");
-            Console.Read();
+            Console.ReadLine();
       
            Console.WriteLine("What is the amount of points associated with this goal?");
-           Console.Read();
+           Console.ReadLine();
     }
 
     //public void GoalBonusPoints(){
