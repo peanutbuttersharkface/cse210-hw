@@ -1,10 +1,21 @@
 using System;
+using System.IO;
 
 class Program
 {
     static void Main(string[] args)
     {
-        
+       string fileName = "goals.txt";
+
+        using (StreamWriter outputFile = new StreamWriter(fileName))
+       {
+         // You can add text to the file with the WriteLine method
+          outputFile.WriteLine("This will be the first line in the file.");
+    
+         // You can use the $ and include variables just like with Console.WriteLine
+         string color = "Blue";
+         outputFile.WriteLine($"My favorite color is {color}");
+         } 
         int userChoice = 0;
          
         do{
@@ -25,8 +36,7 @@ class Program
 
         if (userChoice == 1){
             Console.Clear();
-            //make a list to put goals in
-            //List<Goal> _current = new List<Goal>();
+           
             int choice = 0;
             do{
                 Console.WriteLine("The types of Goals are:");
@@ -39,11 +49,12 @@ class Program
                
             
             if (choice == 1){
-            
-                Simple goal1 = new Simple();
-                goal1.GoalInfo();
+                Save goal1 = new Save();
+                Simple simple1 = new Simple();
+                simple1.GoalInfo();
                 Console.Read();
-               //_current.Add(goal1);
+
+                
                 return;
            
 

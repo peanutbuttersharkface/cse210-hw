@@ -39,7 +39,7 @@ class Program
 
         Console.WriteLine(order1.PackingLabel());
         Console.WriteLine(order1.ShippingLabel());
-        Console.WriteLine($"Total:{ order1.TotalCost():C}");
+        Console.WriteLine($"Total:{order1.TotalCost():C}");
         Console.WriteLine();
 
         Console.WriteLine(order2.PackingLabel());

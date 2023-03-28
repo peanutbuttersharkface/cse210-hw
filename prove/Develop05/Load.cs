@@ -1,4 +1,3 @@
-public class Load{
+using System.IO; 
 
-   // load the list into goals.txt 
-}
+

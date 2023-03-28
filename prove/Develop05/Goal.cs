@@ -3,35 +3,57 @@ public abstract class Goal{
     private string _description;
 
     private int _points;
-    List<string> _totalPoints;
-
     
 
-   // public Goal(string name, string description, int points, List<string> totalPoints){
-    //    _name = name;
-    //    _description = description;
-    //    _points = points;
-    //    _totalPoints = totalPoints;
+    public string Name{
+        get{
+            return _name;
+        }
+        set{
+            _name = value;
+        }
+    }
+
+    public string Description{
+        get{
+            return _description;
+        }
+        set{
+            _description = value;
+        }
+    }
+
+    public int Points{
+        get{
+            return _points;
+        }
+        set{
+            _points = value;
+        }
+    }
+    public Goal(){
+
+    }
+    public Goal(string name, string description, int points){
+        _name = name;
+       _description = description;
+       _points = points;
     
-   // }
+    
+    }
     
     public void DisplayGoalInfo(){
         Console.WriteLine($"{_name}");
         Console.WriteLine($"{_description}");
         Console.WriteLine($"{_points}");
-        Console.WriteLine($"{_totalPoints}");
-    }
+        
+   }
 
-    public void RecordEvent(){
-
-    }
-    public void IsComplete(){
+    public virtual void RecordEvent(){
 
     }
-
-
-    //public abstract int GetTime();
-    //public abstract int GetPoints();
+    public abstract string Status();
+    
     public void GoalInfo(){
            Console.WriteLine("What is the name of your goal?");
             Console.ReadLine();
@@ -43,8 +65,5 @@ public abstract class Goal{
            Console.ReadLine();
     }
 
-    //public void GoalBonusPoints(){
-     //   Console.WriteLine("How many bonus points for completing the activity?");
-    //    Console.Read();
-    //}
+    
     }

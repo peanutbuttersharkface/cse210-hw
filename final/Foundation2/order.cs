@@ -49,7 +49,7 @@ public class Order{
         return label;
     }
 
-    public string ShippingLabel(){
+    public string ShippingLabel(){ 
         Customer customer = _customer;
         string ship = customer.CustName() + "\n" + 
         customer.GetAddress().CustAddress();
