@@ -5,17 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
-       string fileName = "goals.txt";
-
-        using (StreamWriter outputFile = new StreamWriter(fileName))
-       {
-         // You can add text to the file with the WriteLine method
-          outputFile.WriteLine("This will be the first line in the file.");
-    
-         // You can use the $ and include variables just like with Console.WriteLine
-         string color = "Blue";
-         outputFile.WriteLine($"My favorite color is {color}");
-         } 
+       
         int userChoice = 0;
          
         do{
@@ -52,11 +42,7 @@ class Program
                 Save goal1 = new Save();
                 Simple simple1 = new Simple();
                 simple1.GoalInfo();
-                Console.Read();
-
                 
-                return;
-           
 
             // save to a list
 

@@ -1,10 +1,10 @@
-using System;
+using System.IO;
 
 class Program
 {
     static void Main(string[] args)
     {//menu
-    Console.WriteLine("Welcome to the Journal Program.");
+        Console.WriteLine("Welcome to the Journal Program.");
         int pick = 0;
       do{
       
@@ -17,53 +17,47 @@ class Program
       Console.Write("What would you like to do?");
       pick = Convert.ToInt32(Console.ReadLine());
 
-      DisplayJournal journal = new DisplayJournal();
       NewEntry entry1 = new NewEntry();
-      PromptGenerator prompt = new PromptGenerator();
+      DisplayJournal disJournal = new DisplayJournal();
+      //NewEntry entry2 = new NewEntry();
+      Journal journal1 = new Journal();
+      List<Journal> _journal = new List<Journal>();
       // if statement
 
       if(pick == 1)
-      {
-      
-     
-      // gives the prompt
-      journal._prompt = prompt.Display();
-
-      string response = Console.ReadLine();
-      entry1._entry = response;
-
-      DateTime theCurrentTime = DateTime.Now;
-      string dateText = theCurrentTime.ToShortDateString();
-      journal._date = dateText;
-      Console.WriteLine(dateText);
-
-      
-      journal._entries.Add(entry1);
-      
-      }
-      
-      else if (pick == 2)
-      {
+      { journal1.ListEntries();
+        entry1._date = "4/14/2023";
+        entry1.DisplayPrompt();
+        entry1._entry = "I got my homework done!";
+        _journal.Add(journal1);
+        //entry1._date = entry1.GetDate();
+        //entry1.DisplayPrompt();
+        //string _entry = Console.ReadLine();
         
-        journal.listEntries();
+        //journal1._entries.Add(entry1);
+        }
+      else if (pick == 2)
+        { 
+          journal1.ListEntries();
       }
-
+      
       else if (pick == 3)
-      {
-        Console.WriteLine("What is the filename you would like to store your entries in?");
-        string filename = Console.ReadLine();
-        journal.Load(filename);
-    }
+       {
+        disJournal.Journal();
+       }
       else if (pick == 4)
       {
-        Console.WriteLine("What file would you like to save to?");
-        string filename = Console.ReadLine();
-        journal.Save(filename);
+          Console.WriteLine("What is the filename?");
+          string filename = Console.ReadLine();
+          using(StreamWriter outputFile = new StreamWriter(filename)){
+          outputFile.WriteLine(entry1.GetDate());
+          outputFile.WriteLine(entry1.DisplayPrompt());
+          //outputFile.WriteLine(entry1.DisplayEntry());
       }
-
+      }
       else if (pick == 5)
       {
-        Console.WriteLine("Good Bye!");
+         Console.WriteLine("Good Bye!");
       }
       } while(pick !=5);     
 }

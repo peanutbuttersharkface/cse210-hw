@@ -12,24 +12,12 @@ public class Customer{
          
     }
 
-    public string CustomerName{
-        get{
-            return _customerName;
-        }
-        set{
-            _customerName = value;
-        }
-    }
+    
     
     public string CustName(){
         return _customerName;
     }
-     public Address CustAddress{
-        get{
-            return _address;
-        }
-        
-    }
+    
     public Address GetAddress(){
         return _address;
     }

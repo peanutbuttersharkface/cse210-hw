@@ -19,32 +19,15 @@ public class Product{
             return _prodName;
        
     }
-      public double Price{
-        get{
-            return _price;
-        }
-        set{
-            _price = value;
-        }
-    }
+    
       public string ProductId(){
         
             return _productId;
         
     }
-      public int Quantity{
-        get{
-            return _quantity;
-        }
-        set{
-            _quantity = value;
-        }
-    }
+     
     public double priceOfProduct(){
         return _price * _quantity;
     }
 
-   // public string DisplayProduct(){
-     //   string item = $"{ProdName}, {ProductId}, {Price}, {Quantity}";
-       // return item;
     }

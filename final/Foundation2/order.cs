@@ -25,10 +25,7 @@ public class Order{
             _customer = value;
         }
     }
-    public string GetOrder(){
-        string orders = $"{CustName}, {Prod}";
-        return orders;
-    }
+   
     public double TotalCost(){
         double total = 0;
         foreach (Product product in _products){
@@ -58,13 +55,4 @@ public class Order{
 
     }
 
-    //calculate total cost of order
-    
-    //return string for packing label
-    //public string PackingLabel(){
-        
-        
-         
-    //}
-    //return string for shipping label
     

@@ -1,6 +1,8 @@
 public class Simple: Goal{
     
-   
+   public Simple(){
+    
+   }
 
    public Simple(string name, string description, int points): base(name, description, points){
    

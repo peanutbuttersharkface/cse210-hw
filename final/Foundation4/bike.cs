@@ -6,14 +6,7 @@ public class Bike: Activity{
     public Bike(string date, double minutes, string name, double speed): base(date, minutes, name){
         _speed = speed;
     }
-    public double Speed{
-        get{
-            return _speed;
-        }
-        set{
-            _speed = value;
-        }
-    }
+   
     public override double GetDistance()
     {
         return (_speed* Minutes)/60;

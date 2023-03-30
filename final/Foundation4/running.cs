@@ -6,13 +6,7 @@ public class Running: Activity{
     public Running(string date, double minutes, string name, double distance) :base(date, minutes, name){
         _distance = distance;
     }
-    public double Distance{
-        get{
-            return _distance;}
-        set{
-            _distance = value;
-        }    
-    }
+   
     public override double GetDistance()
     {
         return _distance;

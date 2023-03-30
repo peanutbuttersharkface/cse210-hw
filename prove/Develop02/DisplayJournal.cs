@@ -1,34 +1,17 @@
-using System;
 using System.IO;
 
 public class DisplayJournal{
-    public string _date;
 
-    public string _prompt;
-    public List<NewEntry> _entries = new List<NewEntry>();
+    public void Journal(){
+     Console.WriteLine("What is the filename?");
+         string filename = Console.ReadLine();
+         string[] lines = System.IO.File.ReadAllLines(filename);
 
-    public void listEntries()
-    {
-        Console.WriteLine($"{_date}");
-        Console.WriteLine($"{_prompt}");
-        Console.WriteLine("Entry:");
-            foreach (NewEntry entry in _entries)
-            {
-                entry.DisplayEntry();
-            }
-    }
+         foreach (string line in lines){
+          string[] parts = line.Split(",");
 
-    public void Save(string filename)  
-    {
-        using (StreamWriter outputFile = new StreamWriter(filename))
-        {
-            outputFile.WriteLine(_entries);
-        }
-    }
-
-    public void Load(string filename)
-    {
-        
-        string[] journal = System.IO.File.ReadAllLines(filename);
-    }
+          string _date = parts[0];
+          string _prompt = parts[1];
+          string _entry = parts[2];
+       }}
 }
