@@ -9,7 +9,7 @@ public class Swimming: Activity{
 
     public override double GetDistance()
     {
-        return (_laps * 50 /1000);
+        return (_laps * 50 /1000)*.62;
     }
 
     public override double GetSpeed()
