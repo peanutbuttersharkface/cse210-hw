@@ -1,2 +1,6 @@
-This will be the first line in the file.
-My favorite color is Blue
+Simple, [ ] Run a mile., (Be able to run a mile in less than 10 min.), 100,
+
+Eternal, [ ] Genealogy,  (Spend 1 hour each week doing genealogy.), 50 
+
+ Checklist, [ ] Go to the temple,  (Do an ordinance), 50 -- Currently completed: 0/12 
+

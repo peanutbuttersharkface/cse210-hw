@@ -5,15 +5,14 @@ class Program
 {
     static void Main(string[] args)
     {
-       
+        List<Goal> _newGoal = new List<Goal>();
         int userChoice = 0;
-         
-        do{
         Console.Clear();
-        Console.WriteLine("");
-        Console.WriteLine("You have 0 points.");
-        Console.WriteLine("");
         Console.WriteLine("Welcome to your Eternal Quest!");
+        do{
+        Console.WriteLine();
+        Console.WriteLine("You have 0 points.");
+        Console.WriteLine();
         Console.WriteLine("Main Menu");
         Console.WriteLine("1. Create New Goal");
         Console.WriteLine("2. List Goals");
@@ -28,7 +27,7 @@ class Program
             Console.Clear();
            
             int choice = 0;
-            do{
+            
                 Console.WriteLine("The types of Goals are:");
                 Console.WriteLine("1. Simple Goal");
                 Console.WriteLine("2. Eternal Goal");
@@ -37,62 +36,69 @@ class Program
                 Console.WriteLine("Which Goal would you like to make?");
                 choice = Convert.ToInt32(Console.ReadLine());
                
-            
             if (choice == 1){
-                Save goal1 = new Save();
                 Simple simple1 = new Simple();
                 simple1.GoalInfo();
-                
-
-            // save to a list
-
-             //info =(name, description, points);
-            //Goal goal1 = new Goal($"{name}, {description}, {points}, {bonusPoints}")
-           
-            //goal._newGoal.Add($"{name}, {description}, {points}, {bonusPoints}");
-           
-            
+                _newGoal.Add(simple1); 
             } 
-            if (choice == 2){
-
-            
-                Eternal goal2 = new Eternal();
-                goal2.GoalInfo();
-                Console.Read();
-                break;
-            // save to the list
+            else if (choice == 2){
+                Eternal eternal1 = new Eternal();
+                eternal1.GoalInfo();
+                _newGoal.Add(eternal1);
             }
-
-            if (choice == 3){
-
-            
-                Checklist goal3 = new Checklist();
-                goal3.GoalInfo();
-                Console.Read();
-                // how many times to complete
-                Console.WriteLine("How many bonus points for completing goal?");
-                Console.Read();
-                break;
-            
+            else if (choice == 3){
+                Checklist checklist1 = new Checklist();
+                checklist1.GoalInfo();
+                _newGoal.Add(checklist1); 
              }
-            } while (choice <4); break;}
-
+            } 
         if (userChoice == 2){
-            Console.WriteLine("The goals are:");
-            
-            //Console.WriteLine(show the list);
-           
+            Console.WriteLine();
+            Console.WriteLine("Your goals are:");
+            Console.WriteLine();
+            foreach (var goal in _newGoal){
+                Console.WriteLine(goal.DisplayGoalInfo());
+            } 
         }
         if (userChoice == 3){
-            //Save the goals
-            } 
+            
+            Console.WriteLine();
+            Console.WriteLine("What is the filename you want to save your goals to?");
+            string filename = Console.ReadLine();
+            using (StreamWriter outputFile = new StreamWriter(filename)){
+              foreach (var goal in _newGoal){
+                 //outputFile.WriteLine(goal);
+                 outputFile.WriteLine(goal.DisplayGoalInfo());
+                 outputFile.WriteLine();
+            }
+            } }
         if (userChoice == 4){
-            //Load Goals
+           string filename = "goals.txt";
+           string[] lines = System.IO.File.ReadAllLines(filename);
+            foreach(var line in lines){
+                Console.WriteLine(line);
+            }
             }  
         if (userChoice == 5){
-
-            //record event
-            }       
-        } while(userChoice <6);
-        } 
+            Console.WriteLine("The goals are:");
+           string filename = "goals.txt";
+           string[] lines = System.IO.File.ReadAllLines(filename);
+            foreach(var line in lines){
+            Console.WriteLine(line);
+            }
+            Console.WriteLine("Which goal did you accomplish?");
+            string answer = Console.ReadLine();
+            if(answer == "simple"){
+                Console.WriteLine("Congratulations! You have earned 100 points");
+            } 
+            else if (answer == "eternal"){
+                Console.WriteLine("Congradulations! you earned 50 points");
+            }     
+            else if (answer =="checklist"){
+                Console.WriteLine("Congradulations! You earned 50 points");
+            }
+        }
+        } while(userChoice <6);     
+    }
 }
+

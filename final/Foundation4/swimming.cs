@@ -24,6 +24,6 @@ public class Swimming: Activity{
 
      public override string GetSummary()
     {
-        return $"{Date} {Name} ({Minutes} min)- Distance {string.Format("{0:#.0}",GetDistance())} meters, Speed {string.Format("{0:#.0}",GetSpeed())} laps per hour, Pace: {string.Format("{0:#.0}",GetPace())} min per lap ";
+        return $"{Date} {Name} ({Minutes} min)- Distance {string.Format("{0:#.0}",GetDistance())} miles, Speed {string.Format("{0:#.0}",GetSpeed())} laps per hour, Pace: {string.Format("{0:#.0}",GetPace())} min per lap ";
     }
 }

@@ -42,11 +42,8 @@ public abstract class Goal{
     
     }
     
-    public void DisplayGoalInfo(){
-        Console.WriteLine($"{_name}");
-        Console.WriteLine($"{_description}");
-        Console.WriteLine($"{_points}");
-        
+    public virtual string DisplayGoalInfo(){
+        return$"{_name} \n {_description} \n {_points}" ;    
    }
 
     public virtual void RecordEvent(){
@@ -54,15 +51,15 @@ public abstract class Goal{
     }
     public abstract string Status();
     
-    public void GoalInfo(){
+    public virtual void GoalInfo(){
            Console.WriteLine("What is the name of your goal?");
-            Console.ReadLine();
+            string _name = Console.ReadLine();
 
             Console.WriteLine("What is a short description of it?");
-            Console.ReadLine();
+            string _description = Console.ReadLine();
       
            Console.WriteLine("What is the amount of points associated with this goal?");
-           Console.ReadLine();
+           int _points = Convert.ToInt32( Console.ReadLine());
     }
 
     

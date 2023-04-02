@@ -18,4 +18,17 @@ public class Eternal:Goal{
     {
         return $"Number of times done goal: {_num} {Name}";
     }
+    public override void GoalInfo(){
+           Console.WriteLine("What is the name of your goal?");
+             Name = Console.ReadLine();
+
+            Console.WriteLine("What is a short description of it?");
+             Description = Console.ReadLine();
+      
+           Console.WriteLine("Number of points for each time you accomplish this goal?");
+            Points = Convert.ToInt32( Console.ReadLine());
+    }
+       public override string DisplayGoalInfo(){
+        return$"Eternal, [ ] {Name},  ({Description}), {Points} ";    
+   }
 }
